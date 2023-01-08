@@ -48,6 +48,6 @@ jobs:
           - os: macos-12
             target-platform: StandaloneOSX
           - os: ubuntu-latest
-            target-platform: StandaloneLinux64
+            target-platform: Android
 
 
