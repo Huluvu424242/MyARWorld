@@ -42,18 +42,17 @@ jobs:
           - windows-2019
           - macos-12
           - ubuntu-latest
-        target-platform:
-          - Android
-          - StandaloneWindows64
-          - StandaloneOSX
-          - StandaloneLinux64
         include:
           - os: windows-2019
             target-platform: StandaloneWindows64
+          - os: windows-2019
+            target-platform: Android
           - os: macos-12
             target-platform: StandaloneOSX
           - os: ubuntu-latest
             target-platform: StandaloneLinux64
+          - os: ubuntu-latest
+            target-platform: Android
 
 
 
