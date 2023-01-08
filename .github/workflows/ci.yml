@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: ${{ matrix.target-platform }}-${{ matrix.unity-version }}
+    name: ${{ matrix.unity-version }}-${{ matrix.os }}-${{ matrix.target-platform }}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -19,7 +19,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: Library
-          key: ${{ matrix.unity-version }}-${{ matrix.target-platform }}
+          key: ${{ matrix.unity-version }}-${{ matrix.os }}-${{ matrix.target-platform }}
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -31,8 +31,8 @@ jobs:
           buildName: MyARWorld
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.target-platform }}-${{ matrix.unity-version }}
-          path: build/${{ matrix.target-platform }}
+          name: ${{ matrix.unity-version }}-${{ matrix.os }}-${{ matrix.target-platform }}
+          path: build/${{ matrix.unity-version }}-${{ matrix.os }}-${{ matrix.target-platform }}
 
     strategy:
       matrix:
