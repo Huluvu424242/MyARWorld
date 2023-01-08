@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="BetendeHaende" size="1.000000 1.358811" />
+    <ImageTarget name="HauptstrassenschildKontrast" size="1.000000 0.941714" />
+    <ImageTarget name="Hauptstrassenschild" size="1.000000 0.941714" />
+    <ImageTarget name="BuchstabeT" size="1.000000 1.507656" />
+    <ImageTarget name="KreuzKoenig" size="1.000000 1.753425" />
+    <ImageTarget name="RisseSchlechteQualitaet" size="1.000000 0.750000" />
+    <ImageTarget name="RisseGuteQualitaet" size="1.000000 0.750000" />
+  </Tracking>
+</QCARConfig>
