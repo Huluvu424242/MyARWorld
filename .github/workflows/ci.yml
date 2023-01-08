@@ -30,7 +30,7 @@ jobs:
           unityVersion: ${{ matrix.unity-version }}
           buildName: MyARWorld
           androidTargetSdkVersion: AndroidApiLevel25
-          androidAppBundle: true
+          androidAppBundle: false
       - uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.unity-version }}-${{ matrix.os }}-${{ matrix.target-platform }}
