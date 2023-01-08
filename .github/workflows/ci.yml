@@ -41,8 +41,8 @@ jobs:
         unity-version:
           - 2021.3.16f1
         os:
-#          - windows-2019
-#          - macos-12
+          - windows-2019
+          - macos-12
           - ubuntu-latest
         include:
           - os: windows-2019
