@@ -21,7 +21,6 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
         with:
           targetPlatform: ${{ matrix.target-platform }}
-          projectPath: .
           unityVersion: ${{ matrix.unity-version }}
           buildName: MyARWorld
       - uses: actions/upload-artifact@v3
