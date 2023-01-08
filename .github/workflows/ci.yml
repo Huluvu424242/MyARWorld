@@ -6,10 +6,12 @@ on:
       - 'Assets/**'
       - 'Packages/**'
       - 'ProjectSettings/**'
+  workflow_dispatch: {}
 
 jobs:
-  buildForLinux:
-    runs-on: ubuntu-latest
+  build:
+    name: ${{ matrix.target-platform }}-${{ matrix.unity-version }}
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
       - uses: game-ci/unity-builder@v2
@@ -18,12 +20,29 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
         with:
-          targetPlattform: StandaloneLinux64
+          targetPlatform: ${{ matrix.target-platform }}
           projectPath: .
-          unityVersion: 2021.3.16f1
+          unityVersion: ${{ matrix.unity-version }}
           buildName: MyARWorld
       - uses: actions/upload-artifact@v3
         with:
-          name: StandaloneLinux64
-          path: build/StandaloneLinux64
+          name: ${{ matrix.target-platform }}-${{ matrix.unity-version }}
+          path: build/${{ matrix.target-platform }}
+
+    strategy:
+      matrix:
+        unity-version:
+          - 2021.3.16f1
+        os:
+          - windows-2019
+          - macos-12
+          - ubuntu-latest
+        include:
+          - os: windows-2019
+            target-platform: StandaloneWindows64
+          - os: macos-12
+            target-platform: StandaloneOSX
+          - os: ubuntu-latest
+            target-platform: StandaloneLinux64
+
 
