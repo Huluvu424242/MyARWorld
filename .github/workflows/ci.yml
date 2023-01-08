@@ -44,6 +44,7 @@ jobs:
           - ubuntu-latest
         include:
           - target-platform: Android
+            os: windows-2019
           - os: windows-2019
             target-platform: StandaloneWindows64
           - os: macos-12
