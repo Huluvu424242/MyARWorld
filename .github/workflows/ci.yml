@@ -48,7 +48,7 @@ jobs:
           - os: windows-2019
             target-platform: StandaloneWindows64
           - os: macos-12
-            target-platform: StandaloneOSX
+            target-platform: iOS
           - os: ubuntu-latest
             target-platform: Android
 
